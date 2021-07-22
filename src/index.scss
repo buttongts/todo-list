@@ -1,0 +1,160 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #root {
+     margin: 0 5px;
+   }
+  
+  body {
+    font-size: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    background: linear-gradient(to right, #ec6f66, #f3a183);
+  }
+
+  button {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+
+  .app {
+      margin: 120px auto;
+      padding: 15px;
+      background-color: rgb(238, 234, 234);
+      max-width: 550px;
+      border-radius: 5px;
+
+      &__title {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+    }
+
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10px;
+
+      &__input, &__btn {
+        padding: 12px 18px;
+        margin: 0 2px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__input {
+        width: 80%;
+      }
+
+      &__btn {
+        background-color: red;
+        color: white;
+        font-weight: 600;
+        width: 20%;
+        transition: background-color .3s;
+        &:hover {
+          background-color: rgb(17, 17, 17);
+        }
+      }
+    }
+
+    .task {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 10px 15px;
+      margin: 7px 2px;
+      max-width: 100%;
+      border-radius: 5px;
+      animation-name: task-anim-add;
+      animation-duration: .6s;
+
+      &__title {
+        flex: 1;
+      }
+
+      &__btn-remove {
+        color: rgb(219, 56, 56);
+        font-size: 24px;
+      }
+
+      &__btn-completed {
+        color: green;
+        font-size: 28px;
+      }
+
+      &__btn-remove, &__btn-completed {
+        margin: 0 2px;
+        transition: opacity .3s;
+        &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+    .info-success {
+      background-color: rgba(21, 168, 21, 0.144);
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+      margin: 5px auto;
+      border-radius: 5px;
+      animation-name: appear;
+      animation-duration: .6s;
+    }
+
+    .info-remove {
+      background-color: rgba(168, 21, 21, 0.144);
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+      margin: 5px auto;
+      border-radius: 5px;
+      animation-name: appear;
+      animation-duration: .6s;
+    }
+
+    .empty {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .completed {
+      flex: 1;
+      color: rgb(161, 161, 161);
+      text-decoration: line-through;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes task-anim-add {
+      from {
+        opacity: 0;
+        transform: translate(-100%)
+      }
+      to {
+        opacity: 1;
+        transform: translate(0)
+      }
+    }
+    
+
+ 
+  
